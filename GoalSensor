@@ -9,12 +9,14 @@
 
 #include "xc.h"
 
+//This code will set up the A/D conversion for the IR corner sensor (pin 8)
+
 void config_ad()
 {
 
 	/*** Configure Desired Port Pins as Analog Inputs ***/
-	_TRISB2 = 1;		// TRISA/B, pg. 45 datasheet
-	_ANSB2 = 1;			// ANSA/B, pg. 136-137
+	_TRISA3 = 1;		// TRISA/B, pg. 45 datasheet
+	_ANSA3 = 1;			// ANSA/B, pg. 136-137
     
 
 	/*** Select Voltage Reference Source ***/
@@ -42,7 +44,7 @@ void config_ad()
 	// scan inputs
     _CSCNA = 1;			// AD1CON2<10>
 	// choose which channels to scan, e.g. for ch AN12, set _CSS12 = 1;
-	_CSS4 = 1;			// AD1CSSH/L, pg. 217
+	_CSS14 = 1;			// AD1CSSH/L, pg. 217
    
 
 	/*** Select How Results are Presented in Buffer ***/
